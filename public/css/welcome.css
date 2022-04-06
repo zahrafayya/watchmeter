@@ -1,0 +1,55 @@
+body {
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+nav {
+    margin-left: 72px;
+    margin-top: 36px;
+    height: 10vh;
+}
+
+.bubble {
+    margin-top: 12vh;
+    margin-left: 72px;
+    background-color: white;
+    width: 40%;
+    border-radius: 20px;
+    justify-content: right;
+}
+
+@supports (mask-image: paint(smooth-corners)) {
+    .el.is-loaded {
+        border-radius: 0;
+        mask-image: paint(smooth-corners);
+        --smooth-corners: 10;
+    }
+}
+
+.content {
+    font-family: 'Raleway', sans-serif;
+    width: auto;
+    margin-top: 4vw;
+    margin-bottom: 4vw;
+    margin-left: 4vw;
+    margin-right: 4vw;
+}
+
+.title-content {
+    font-weight: 800;
+    font-size: xx-large;
+    margin-bottom: 60px;
+}
+
+.btn-primary {
+    border-color: #fefb1e;
+    background-color: #fefb1e;
+    color:black;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: large;
+}
