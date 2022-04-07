@@ -53,3 +53,20 @@ nav {
     font-weight: 600;
     font-size: large;
 }
+
+.z-about {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.z-about a {
+    font-size: large;
+    color: black;
+    background-color: #fefb1e;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 8px;
+}
