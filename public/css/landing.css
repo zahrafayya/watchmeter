@@ -89,3 +89,20 @@ nav {
 .edit-button a:hover {
     test-decoration: none;
 }
+
+.poster {
+    margin-top: 20px;
+}
+
+.poster-link img {
+    width: 160px;
+    height: auto;
+}
+
+.content-title {
+    margin-bottom: 30px;
+    margin-top: 0;
+    vertical-align: text-top;
+    font-size: xx-large;
+    font-weight: 600;
+}
