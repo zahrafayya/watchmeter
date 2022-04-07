@@ -56,6 +56,7 @@
             <div class="edit-button">
                 <a href="#">Edit</a>
             </div>
+<<<<<<< HEAD
             <div class="poster">
                 <a class="poster-link" href="#">
                     <img src="../images/poster.png" height="45vh" alt="poster" loading="lazy"/>
@@ -64,5 +65,9 @@
         </div>
     </div>
 
+=======
+        </div>
+    </div>
+>>>>>>> parent of c1db500 (feat: add about)
 </body>
 </html>
