@@ -1,78 +1,130 @@
 @extends('layouts.app')
 
 @section('content')
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header">{{ __('Register') }}</div>
 
-        <title>Watchmeter</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="/css/register.css">
-        <link rel="shortcut icon" href="/images/logo2.png"/>
-    </head>
-    <body>
-    <div class="a">
-        <div class="box-right">
-            <div class="z-login">
-                <div class="z-title">Register</div>
-                <form method="POST" action="{{ route('register') }}">
-                    @csrf
-                    <div class="form-outline mb-4">
-                        <label class="z-form form-label" for="name">Name</label>
-                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
-                        @error('name')
-                        <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                        @enderror
-                    </div>
+                <div class="card-body">
+                    <form method="POST" action="{{ route('register') }}">
+                        @csrf
 
-                    <div class="form-outline mb-4">
-                        <label class="z-form form-label" for="email">Email address</label>
-                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email">
-                        @error('email')
-                        <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                        @enderror
-                    </div>
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
 
-                    <div class="form-outline mb-4">
-                        <label class="z-form form-label" for="username">Username</label>
-                        <input id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" autocomplete="username">
-                        @error('username')
-                        <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                        @enderror
-                    </div>
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
 
-                    <div class="form-outline mb-4">
-                        <label class="z-form form-label" for="password">Password</label>
-                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
-                        @error('password')
-                        <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
+                                @if ($errors->has('name'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
-                    <div class="form-outline mb-4">
-                        <label class="z-form form-label" for="password-confirm">Confirm password</label>
-                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
-                </form>
+                        <div class="form-group row">
+                            <label for="first_name" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="first_name" type="text" class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="first_name" value="{{ old('first_name') }}" required autofocus>
+
+                                @if ($errors->has('first_name'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('first_name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="last_name" class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="last_name" type="text" class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name" value="{{ old('last_name') }}" required autofocus>
+
+                                @if ($errors->has('last_name'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('last_name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
+                                @if ($errors->has('email'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+
+
+                        @if(config('settings.reCaptchStatus'))
+                            <div class="form-group">
+                                <div class="col-sm-6 col-sm-offset-4">
+                                    <div class="g-recaptcha" data-sitekey="{{ config('settings.reCaptchSite') }}"></div>
+                                </div>
+                            </div>
+                        @endif
+
+                        <div class="form-group row mb-4">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Register') }}
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+                                <p class="text-center mb-4">
+                                    Or Use Social Logins to Register
+                                </p>
+                                @include('partials.socials')
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="box-left">
-            <a href="{{ url('/') }}">
-                <img class="z-logo" src="../images/logo.png" height="45vh" alt="Watchmeter Logo" loading="lazy"/>
-            </a>
-        </div>
     </div>
-    </body>
+</div>
+@endsection
+
+@section('footer_scripts')
+    @if(config('settings.reCaptchStatus'))
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+    @endif
 @endsection
