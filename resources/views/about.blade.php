@@ -1,37 +1,31 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Watchmeter</title>
+    <meta charset="utf-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/css/welcome.css">
-    <link rel="shortcut icon" href="/images/logo2.png"/>
+    <link rel="stylesheet" type="text/css" href="/css/about.css">
 </head>
-<body>
+<body class="d-flex flex-column mb-3 align-center">
 <header>
     <nav class="navbar navbar-expand-md">
-        <a class="navbar-brand" href="#">
-            <img src="/images/logo.png" height="45vh" alt="Watchmeter Logo" loading="lazy"/>
+        <a class="navbar-brand" href="{{ url('/') }}">
+            <img src="../images/logo.png" height="45vh" alt="Watchmeter Logo" loading="lazy"/>
         </a>
-        <div class="z-about">
-            <a href="{{ route('about') }}">
-                About
-            </a>
-        </div>
     </nav>
     <div class="p-2 bubble">
         <div class="content">
             <div class="title-content">
-                Keep track of your current progress in watching movies and TV shows.
+                Watchmeter is a website that serves as a bookmark and progress watcher for TV shows and movies that you are currently watching.
+                With the help of our service you will not forget the last episode or minute of TV shows or movies that you previously had watched.
+                You can write your watch history in our website and we will remember it for you!
             </div>
-            <a href="{{ route('login') }}" class="btn btn-primary btn-rounded">Get Started</a>
         </div>
     </div>
 </header>
+
 </body>
 </html>
