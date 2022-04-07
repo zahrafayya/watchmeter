@@ -1,0 +1,91 @@
+body {
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+nav {
+    margin-left: 56px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    height: 10vh;
+}
+
+.bubble {
+    margin-left: 52px;
+    margin-right: 52px;
+    background-color: white;
+    width: auto;
+    min-height: calc(90vh - 80px);
+    border-radius: 20px;
+    justify-content: left;
+    padding: 0;
+    border: none;
+}
+
+.z-sidenav {
+    margin: 0;
+    min-height: calc(90vh - 80px);
+    background-color: #f7f7f7;
+    width: 200px;
+    overflow: auto;
+    border-right: #d8d8d8;
+    border-width: 0cm;
+    border-right-width: 2px;
+    border-style: solid;
+    border-radius: 20px;
+}
+
+@supports (mask-image: paint(smooth-corners)) {
+    .el.is-loaded {
+        border-radius: 0;
+        mask-image: paint(smooth-corners);
+        --smooth-corners: 10;
+    }
+}
+
+.sidenav-section {
+    margin: 36px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.sidenav-section a {
+    text-decoration: none;
+    color: black;
+}
+
+.sidenav-section a:hover {
+    text-decoration: none;
+    color: blue;
+}
+
+.bottom{
+    margin-bottom: 180px;
+}
+
+.logout a {
+    color:rgb(231, 31, 31);
+}
+
+.z-content {
+    margin: 36px;
+}
+
+.edit-button a {
+    border-width: 1px;
+    border-color: #202020;
+    border-style: solid;
+    padding: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.edit-button a:hover {
+    test-decoration: none;
+}
